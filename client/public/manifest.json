@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Tab and Window Switch Detector",
+  "version": "1.0",
+  "description": "A Chrome extension to detect tab and window switches, and alert on key events after login.",
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "storage",
+    "notifications"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "index.html"
+  }
+}
